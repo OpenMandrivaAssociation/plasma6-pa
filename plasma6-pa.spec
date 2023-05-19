@@ -15,6 +15,7 @@ Source0: https://invent.kde.org/plasma/plasma-pa/-/archive/master/plasma-pa-mast
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 %endif
 BuildRequires: cmake(ECM)
+BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Widgets)
