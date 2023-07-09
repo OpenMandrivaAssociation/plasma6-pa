@@ -30,6 +30,7 @@ BuildRequires: cmake(KF6DocTools)
 BuildRequires: cmake(KF6Notifications)
 BuildRequires: cmake(KF6Kirigami2)
 BuildRequires: cmake(KF6KCMUtils)
+BuildRequires: cmake(KF6Svg)
 BuildRequires: sound-theme-freedesktop
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(libpulse)
