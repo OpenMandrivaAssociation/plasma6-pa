@@ -1,10 +1,10 @@
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20231103
+#define git 20231103
 
 Summary: The new Plasma5 Volume Manager
 Name: plasma6-pa
-Version: 5.240.0
+Version: 5.27.80
 Release: %{?git:0.%{git}.}1
 License: GPLv2+
 Group: Graphical desktop/KDE
@@ -12,7 +12,7 @@ Url: http://www.kde.org
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma-pa/-/archive/master/plasma-pa-master.tar.bz2#/plasma-pa-%{git}.tar.bz2
 %else
-Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/plasma-pa-%{version}.tar.xz
 %endif
 BuildRequires: cmake(ECM)
 BuildRequires: cmake(Qt6)
