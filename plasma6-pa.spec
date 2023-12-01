@@ -36,8 +36,6 @@ BuildRequires: sound-theme-freedesktop
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(libpulse)
 BuildRequires: pkgconfig(libcanberra)
-# Just to avoid pulling in Plasma 5
-BuildRequires: plasma6-xdg-desktop-portal-kde
 BuildConflicts: pkgconfig(gconf-2.0)
 Requires: pulseaudio
 Requires: sound-theme-freedesktop
