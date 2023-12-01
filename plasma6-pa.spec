@@ -26,6 +26,7 @@ BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6GlobalAccel)
 BuildRequires: cmake(KF6I18n)
 BuildRequires: cmake(Plasma) >= 5.90.0
+BuildRequires: cmake(PlasmaQuick)
 BuildRequires: cmake(KF6DocTools)
 BuildRequires: cmake(KF6Notifications)
 BuildRequires: cmake(KF6StatusNotifierItem)
