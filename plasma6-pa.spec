@@ -4,7 +4,7 @@
 
 Summary: The new Plasma5 Volume Manager
 Name: plasma6-pa
-Version: 5.90.0
+Version: 5.91.0
 Release: %{?git:0.%{git}.}1
 License: GPLv2+
 Group: Graphical desktop/KDE
@@ -71,4 +71,3 @@ rm -rf %{buildroot}%{_datadir}/kde4
 %{_qtdir}/qml/org/kde/plasma/private/volume
 %{_datadir}/metainfo/org.kde.plasma.volume.appdata.xml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.volume
-%{_datadir}/kconf_update/*
