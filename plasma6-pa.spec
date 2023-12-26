@@ -37,6 +37,7 @@ BuildRequires: sound-theme-freedesktop
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(libpulse)
 BuildRequires: pkgconfig(libcanberra)
+BuildRequires: gettext
 BuildConflicts: pkgconfig(gconf-2.0)
 Requires: pulseaudio
 Requires: sound-theme-freedesktop
