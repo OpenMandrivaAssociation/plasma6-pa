@@ -1,12 +1,12 @@
 %define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 #define git 20240222
-%define gitbranch Plasma/6.0
+%define gitbranch Plasma/6.1
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary: The new Plasma5 Volume Manager
 Name: plasma6-pa
-Version: 6.0.5
+Version: 6.1.0
 Release: %{?git:0.%{git}.}1
 License: GPLv2+
 Group: Graphical desktop/KDE
@@ -44,27 +44,17 @@ BuildConflicts: pkgconfig(gconf-2.0)
 Requires: pulseaudio
 Requires: sound-theme-freedesktop
 Recommends: pulseaudio-module-gsettings
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 A new Volume manager plasmoid.
 
-%prep
-%autosetup -p1 -n plasma-pa-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
+%install -a
 # No need to carry over kconf_update for KDE 4 bits.
 # If anything, we're updating from 5
-rm -rf %{buildroot}%{_datadir}/kde4
+#rm -rf %{buildroot}%{_datadir}/kde4
 
 %find_lang plasma-pa --all-name --with-html
 
@@ -74,3 +64,5 @@ rm -rf %{buildroot}%{_datadir}/kde4
 %{_qtdir}/qml/org/kde/plasma/private/volume
 %{_datadir}/metainfo/org.kde.plasma.volume.appdata.xml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.volume
+%{_libdir}/libplasma-volume.so*
+%{_qtdir}/plugins/kf6/kded/audioshortcutsservice.so
