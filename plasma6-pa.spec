@@ -4,7 +4,7 @@
 %define gitbranch Plasma/6.1
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Summary: The new Plasma5 Volume Manager
+Summary: Volume manager plasmoid
 Name: plasma6-pa
 Version: 6.1.0
 Release: %{?git:0.%{git}.}1
@@ -49,16 +49,9 @@ BuildOption: -DBUILD_QCH:BOOL=ON
 BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
-A new Volume manager plasmoid.
+Volume manager plasmoid.
 
-%install -a
-# No need to carry over kconf_update for KDE 4 bits.
-# If anything, we're updating from 5
-#rm -rf %{buildroot}%{_datadir}/kde4
-
-%find_lang plasma-pa --all-name --with-html
-
-%files -f plasma-pa.lang
+%files -f %{name}.lang
 %{_qtdir}/plugins/plasma/kcms/systemsettings/kcm_pulseaudio.so
 %{_datadir}/applications/kcm_pulseaudio.desktop
 %{_qtdir}/qml/org/kde/plasma/private/volume
