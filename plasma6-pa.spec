@@ -27,6 +27,7 @@ BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(KF6Declarative)
 BuildRequires: cmake(KF6GlobalAccel)
 BuildRequires: cmake(KF6I18n)
+BuildRequires: cmake(KF6DBusAddons)
 BuildRequires: cmake(Plasma) >= 5.90.0
 BuildRequires: cmake(PlasmaQuick)
 BuildRequires: cmake(KF6DocTools)
