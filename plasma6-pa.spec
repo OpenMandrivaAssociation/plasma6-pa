@@ -10,7 +10,7 @@ Version: 6.2.1
 Release: %{?git:0.%{git}.}1
 License: GPLv2+
 Group: Graphical desktop/KDE
-Url: http://www.kde.org
+Url: https://www.kde.org
 %if 0%{?git:1}
 Source0: https://invent.kde.org/plasma/plasma-pa/-/archive/%{gitbranch}/plasma-pa-%{gitbranchd}.tar.bz2#/plasma-pa-%{git}.tar.bz2
 %else
